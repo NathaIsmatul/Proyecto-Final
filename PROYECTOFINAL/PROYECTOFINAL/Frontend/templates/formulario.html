@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Esterilización</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="Imagenes/Peluditos .png" alt="logo de la organizacion">
+            <h2 class="Nombre">PELUDITOS GT</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="#informacion">Información</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section  class="formulario_a">
+        <div class="container">
+            <h2>Formulario de Adopción</h2>
+            <form action="procesar_formulario.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required><br>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required><br>
+
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required><br>
+
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required><br>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="dpi">DPI:</label>
+                <input type="text" id="dpi" name="dpi" required><br>
+
+                <h3>Preguntas de Adopción:</h3>
+                <label for="pregunta1">¿Por qué deseas adoptar una mascota?</label>
+                <textarea id="pregunta1" name="pregunta1" required></textarea><br>
+
+                <label for="pregunta2">¿Actualmente tiene otros animalitos?</label>
+                <textarea id="pregunta2" name="pregunta2" required></textarea><br>
+
+                <label for="pregunta3">¿Anteriormente ha tenido otros animalitos?</label>
+                <textarea id="pregunta3" name="pregunta3" required></textarea><br>
+
+                <label for="pregunta4">¿Hay niños en su casa?</label>
+                <textarea id="pregunta4" name="pregunta4" required></textarea><br>
+
+                <label for="pregunta5">¿Alguien que viva con usted es alérgico a los animales?</label>
+                <textarea id="pregunta5" name="pregunta5" required></textarea><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,367 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1{ font-size: 3.5em;;}
+h2{ font-size: 2.7;}
+h3{ font-size: 2em}
+p{ font-size: 1.25em;}
+ul{ list-style: none;}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1400px;
+    align-items: center;
+}
+
+
+.container img{
+    height: 50px;
+    margin-right: 100px;
+}
+
+
+header {
+    display: flex;
+    min-height: 70px;
+    background-color: #bba7a7;
+    padding: 20px 0;
+}
+
+header .container {
+    margin: auto;
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #333;
+    font-weight: 600;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: white
+}
+
+
+#titular{
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: #fff;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ) 
+    ,url(Imagenes/perrito.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;   
+}
+
+#contenido .container {
+    display: flex;
+    text-align: center;
+    padding: 75px 20px;
+
+}
+#contenido .img {
+    background-image: url(Imagenes/images.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 50%;
+}
+
+#contenido .texto {
+    width: 50%;
+    max-width: 600px;
+    padding: 0px 50px;
+    text-align: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#contenido2 .container {
+    display: flex;
+    text-align: center;
+    padding: 100px 20px;
+
+}
+#contenido2 .img2 {
+    background-image: url(Imagenes/mascotas.png);
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    width: 50%;
+}
+
+#contenido2 .texto {
+    width: 50%;
+    max-width: 600px;
+    padding: 0px 50px;
+    text-align: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color:#ffffff;
+}
+
+.botones:hover{
+    background-color: #333;
+    color: #ffffff;
+}
+
+
+#opciones{
+    background-color: rgb(30,30,30);
+    color: white;
+
+}
+
+#opciones .container{
+    padding: 50px 0px;
+    max-width: 50%;  
+    margin: 0 auto;
+}
+
+#opciones .formulario{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ) 
+    ,url(Imagenes/mascotas2.jpg);
+    background-size: cover;
+    background-position: center center; 
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#opciones .adoptar{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ) 
+    ,url(Imagenes/mascotas3.jpg);
+    background-size: cover;
+    background-position: center center; 
+    height: 240px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media(max-width:720px){
+    header {
+        flex-direction: column;
+    }
+
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 30;
+    }
+    
+    #contenido .container { 
+        display: flex;
+    }
+
+    #contenido .img {
+        background-image: url(Imagenes/images.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 50%;
+    }
+    
+
+    #contenido2 .container { 
+        display: flex;
+    }
+
+    #contenido2 .img2 {
+        background-image: url(Imagenes/mascotas.png);
+        background-size: cover;
+        background-position: center center;
+        height: 400px;
+        width: 50%;
+    }
+    
+ 
+}
+
+/* Estilos del formulario */
+.formulario_a {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.formulario_a .container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.formulario_a h2 {
+    margin-top: 0;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.formulario_a form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formulario_a form input[type="date"]{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.formulario_a form input[type="text"],
+.formulario_a form input[type="tel"],
+.formulario_a form input[type="email"],
+.formulario_a form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; /* Añadimos transición para suavizar el cambio de color del borde */
+}
+
+.formulario_a form input[type="text"]:focus,
+.formulario_a form input[type="tel"]:focus,
+.formulario_a form input[type="email"]:focus,
+.formulario_a form textarea:focus {
+    border-color: #555; /* Cambiamos el color del borde al enfocar */
+}
+
+.formulario_a form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    margin: 0 auto;
+    display: block; 
+}
+
+.formulario_a form input[type="submit"]:hover {
+    background-color: red;
+}
+
+
+/* Estilos generales del catálogo */
+
+#catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container_a h1 {
+
+    text-align: center;
+    margin-top: 20px;
+}
+
+.animal {
+    background-color: #fff;
+    margin-bottom: 20px;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.animal img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.animal h3 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.animal p {
+    margin-top: 10px;
+}
+
+/* Ejemplos de animales categorizados */
+.perro {
+    border: 2px solid #ff9900;
+}
+
+.gato {
+    border: 2px solid #3366ff;
+}
+
+.conejo {
+    border: 2px solid #33cc33;
+}

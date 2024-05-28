@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Adopción</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="Imagenes/Peluditos .png" alt="logo de la organizacion">
+            <h2 class="Nombre">PELUDITOS GT</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="#informacion">Información</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section  class="formulario_a">
+        <div class="container">
+            <h2>Formulario de Esterilización</h2>
+            <form action="procesar_formulario.php" method="POST">
+                <h2>Datos Personales</h2>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required><br>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required><br>
+
+                <label for="DPI">DPI:</label>
+                <input type="text" id="DPI" name="DPI" required><br>
+
+                <h2>Datos de la Mascota</h2>
+                <label for="n_mascota">Nombre:</label>
+                <input type="text" id="n_mascota" name="n_mascota" required><br>
+
+                <label for="raza">Raza:</label>
+                <input type="email" id="raza" name="raza" required><br>
+
+                <label for="edad">Edad:</label>
+                <input type="text" id="edad" name="edad" required><br>
+
+                <label for="sexo">Sexo</label>
+                <input type="text" id="sexo" name="sexo" required><br>
+
+                <label for="foto">Foto de la mascota:</label>
+                <input type="file" id="foto" name="foto" required><br>
+
+                <input type="submit" value="Registrar">
+            </form>
+        </div>
+    </section>
+</body>
+</html>
