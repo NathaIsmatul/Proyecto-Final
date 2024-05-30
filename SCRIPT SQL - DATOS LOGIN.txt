@@ -1,0 +1,82 @@
+------------ Ingenería De Software ---------    
+------- SCRIPT SQL - HUELLAS DE VIDA ------- 
+
+--- PASO 1: CREAR BASE DE DATOS
+CREATE DATABASE HUELLAS_BD;
+USE HUELLAS_BD;
+
+-- Paso 2: Crear el inicio de sesión (login) en el servidor SQL
+CREATE LOGIN HUELLAS_LOGIN
+WITH PASSWORD = 'SecurePassword123';
+
+-- Paso 3: Crear el usuario de base de datos
+USE HUELLAS_BD;
+CREATE USER HUELLAS_USER FOR LOGIN HUELLAS_LOGIN;
+
+-- Paso 4: Asignar permisos al usuario de base de datos
+    -- Dar permiso de creación de roles
+    GRANT CREATE ROLE TO HUELLAS_USER;
+
+    -- Dar permiso de gestión de permisos en la base de datos
+    GRANT ALTER ANY ROLE TO HUELLAS_USER;
+    GRANT CONTROL ON DATABASE::HUELLAS_BD TO HUELLAS_USER;
+
+--Paso 5: Crear los Roles
+CREATE ROLE RolCRUDHUELLAS;
+CREATE ROLE RolConsultaHUELLAS;
+
+--Paso 6: Crear las Tablas
+CREATE TABLE Roles (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Usuarios (
+    id INT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    rolID INT FOREIGN KEY REFERENCES Roles(id)
+);
+
+CREATE TABLE OpcionesMenu (
+    id INT PRIMARY KEY,
+    usuarioID INT FOREIGN KEY REFERENCES Usuarios(id),
+    nombre VARCHAR(50) NOT NULL
+);
+
+-- Paso 7: Agregar Permisos a los Roles
+GRANT SELECT, INSERT, UPDATE, DELETE ON Usuarios TO RolCRUDHUELLAS;
+GRANT SELECT, INSERT, UPDATE, DELETE ON Roles TO RolCRUDHUELLAS;
+GRANT SELECT, INSERT, UPDATE, DELETE ON OpcionesMenu TO RolCRUDHUELLAS;
+
+GRANT SELECT ON Usuarios TO RolConsultaHUELLAS;
+GRANT SELECT ON Roles TO RolConsultaHUELLAS;
+GRANT SELECT ON OpcionesMenu TO RolConsultaHUELLAS;
+
+-- Paso 8: Asignar Roles al Usuario
+EXEC sp_addrolemember 'RolCRUDHUELLAS', 'HUELLAS_USER';
+EXEC sp_addrolemember 'RolConsultaHUELLAS', 'HUELLAS_USER';
+
+-- Paso 9: Insert de en las tablas 
+
+-- Insertar Roles
+INSERT INTO Roles (id, nombre) VALUES
+(101, 'Administrador'),
+(201, 'Usuario');
+
+-- Insertar Usuarios
+INSERT INTO Usuarios (id, usuario, password, rolID) VALUES
+(101, 'Oliver', 'AdminPassword123', 101),
+(201, 'Natanael', 'UserPassword456', 201);
+
+-- Insertar Opciones de Menu para el Administrador
+INSERT INTO OpcionesMenu (id, usuarioID, nombre) VALUES
+(103, 101, 'Registrar mascota'),
+(104, 101, 'Catalogo de mascotas'),
+(105, 101, 'Registro de adopciones'),
+
+-- Insertar Opciones de Menu para el Usuario
+INSERT INTO OpcionesMenu (id, usuarioID, nombre) VALUES
+(203, 201, 'Perfil'),
+(204, 201, 'Catalogo de mascotas'),
+(205, 201, 'Adopciones');
