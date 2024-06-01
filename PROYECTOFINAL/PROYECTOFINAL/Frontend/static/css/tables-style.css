@@ -1,0 +1,28 @@
+.rounded-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.rounded-table th, .rounded-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.rounded-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #18b418; /* Verde oscuro */
+  color: white;
+}
+
+.rounded-table tr:nth-child(even) {
+  background-color: #E8F5E9; /* Verde muy claro */
+}
+
+.rounded-table tr:hover {
+  background-color: #C8E6C9; /* Verde claro */
+}
