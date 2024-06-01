@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           
+        <!-- Estilo de letra y iconos -->
+        <link rel="stylesheet" href="/static/icons/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="/static/css/login.css">
+    
+        <!-- Estilo de letra para la tipografía para identificar usuario -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap">
+    
+        <script src="/static/js/login.js"></script>
+    </head>
+    
+<body>
+<div class="wrapper" style="background-image: url('/static/images/bg-registration-form.jpg');">
+    <div class="inner">
+        <div class="image-holder">
+            <img src="/static/images/registration-form-dog.jpg" alt="">
+        </div>
+        <form method="POST" action="/login_datos">  <!-- Agregado para levantar el FRONTEND -->
+            <h3>Inicio de</h3>
+            <h3>Sesión</h3>
+            <div class="form-wrapper">
+                <input type="text" name="nombre" id="nombreInput" placeholder="Usuario" class="form-control">
+                <i class="zmdi zmdi-account"></i>
+            </div>
+            <div class="form-wrapper">
+                <input type="text" name="contrasena" placeholder="Contraseña" class="form-control">
+                <i class="zmdi zmdi-lock"></i>
+            </div>
+			<button type="submit">Ingresar <i class="zmdi zmdi-arrow-right"></i></button>
+            <div class="user-type" id="userType">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
